@@ -9,14 +9,14 @@
  * @return {string} word - Transformed word 
  */
 const sortLettersCap = (word) => {
-    let sorted_word = word.toLocaleLowerCase()
+    const sortedWord = word.toLocaleLowerCase()
         .split('')
-        .sort( (a, b) => a.localeCompare(b) )
+        .sort((a, b) => a.localeCompare(b))
         .join('');
 
-    return sorted_word.charAt(0)
+    return sortedWord.charAt(0)
         .toLocaleUpperCase()
-        .concat(sorted_word.slice(1));
+        .concat(sortedWord.slice(1));
 }
 
 
@@ -28,6 +28,6 @@ const sortLettersCap = (word) => {
  */
 const sort = (sequence) => 
     sequence.split(' ')
-        .map( (el) => sortLettersCap(el) )
-        .sort( (a, b) => a.localeCompare(b) )
+        .map((word) => sortLettersCap(word))
+        .sort((a, b) => a.localeCompare(b))
         .join(' ');
